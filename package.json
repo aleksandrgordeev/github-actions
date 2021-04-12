@@ -1,0 +1,22 @@
+{
+  "name": "github-actions",
+  "version": "1.0.0",
+  "description": "Test github actions",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run --headless"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleksandrgordeev/github-actions.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aleksandrgordeev/github-actions/issues"
+  },
+  "homepage": "https://github.com/aleksandrgordeev/github-actions#readme",
+  "dependencies": {
+    "cypress": "^7.0.1"
+  }
+}
