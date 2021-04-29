@@ -1,5 +1,5 @@
 name: Notifications test
-on: push
+on: pull_request
 jobs:
   
   notify-test-start:
