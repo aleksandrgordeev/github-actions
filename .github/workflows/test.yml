@@ -6,15 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Get the last commit messegi inside PR
-      # - uses: actions/checkout@v1
-      # - name: get commit message
-      #   run: |
-      #      echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+      - uses: actions/checkout@v1
+      - name: get commit message
+        run: |
+           echo "commitmsg=$(git log --format=%B -n 1 ${{ github.event.after }})" >> $GITHUB_EN
 
-      # - uses: bluenovaio/action-slack@main 
-      #   with:
-      #     text: ">*Frontend tests started*\n>for ${{ github.head_ref }} branch\n>${{ env.commitmsg }}"
-      #     webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }} 
-      - name: Check evn variable
-        run: echo "${{toJSON(github.event)}}"
+      - uses: bluenovaio/action-slack@main 
+        with:
+          text: ">*Frontend tests started*\n>for ${{ github.head_ref }} branch\n>${{ env.commitmsg }}"
+          webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }} 
 
