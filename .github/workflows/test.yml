@@ -1,9 +1,20 @@
 name: Notifications test
 on: pull_request
 jobs:
-  
+
   notify-test-start:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{ github.event.head_commit.message }}"
-      
+      # Get the last commit messegi inside PR
+      # - uses: actions/checkout@v1
+      # - name: get commit message
+      #   run: |
+      #      echo ::set-env name=commitmsg::$(git log --format=%B -n 1 ${{ github.event.after }})
+
+      # - uses: bluenovaio/action-slack@main 
+      #   with:
+      #     text: ">*Frontend tests started*\n>for ${{ github.head_ref }} branch\n>${{ env.commitmsg }}"
+      #     webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }} 
+      - name: Check evn variable
+        run: echo "${{toJSON(github.event)}}"
+
