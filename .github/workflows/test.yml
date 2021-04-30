@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v1
       - name: get commit message
         run: |
-           echo "commitmsg=$(git log --format=%B -n 1 ${{ github.event.after }})" >> $GITHUB_EN
+           echo "commitmsg=$(git log --format=%B -n 1 ${{ github.event.after }})" >> $GITHUB_ENV
 
       - uses: bluenovaio/action-slack@main 
         with:
